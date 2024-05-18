@@ -1,12 +1,12 @@
-# Documentação da API Gamer Corporation
+# Documentação da API Gamero Gaming
 
 ## Visão Geral
 
-A API Gamer Corporation fornece acesso aos dados dos usuários registrados em nossa plataforma. Atualmente, a API oferece suporte para recuperar os seguintes dados de um usuário:
+A API Gamero Gaming fornece acesso aos dados dos usuários registrados em nossa plataforma. Atualmente, a API oferece suporte para recuperar os seguintes dados de um usuário:
 
 - Nome do usuário
-- Steam ID
-- Epic Games ID
+- Steam
+- Epic Games
 
 ## Uso da API
 
@@ -41,8 +41,8 @@ A API responderá com os dados do usuário em formato JSON. Aqui está um exempl
 ```
 
 - **nome_usuario**: O nome de usuário do usuário consultado.
-- **steam**: O ID da conta Steam associado ao usuário, se disponível.
-- **epicgames**: O ID da conta Epic Games associado ao usuário, se disponível. Se não houver uma conta Epic Games associada, o valor será `null`.
+- **steam**: O Username da conta Steam associado ao usuário, se disponível. Se não houver uma conta Steam associada, o valor será `null`.
+- **epicgames**: O Username da conta Epic Games associado ao usuário, se disponível. Se não houver uma conta Epic Games associada, o valor será `null`.
 
 Se o usuário consultado não for encontrado, a API responderá com uma mensagem de erro.
 
