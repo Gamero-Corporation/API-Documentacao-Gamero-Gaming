@@ -13,7 +13,7 @@ A API Gamero Gaming fornece acesso aos dados dos usuários registrados em nossa 
 O endpoint principal da API é:
 
 ```
-https://gg.gamerocorporation.com/api.php
+https://gg.gamerocorporation.com/api1.php
 ```
 
 ### Requisição
@@ -21,7 +21,7 @@ https://gg.gamerocorporation.com/api.php
 Para recuperar os dados de um usuário específico, você precisa fazer uma solicitação GET para o endpoint da API, fornecendo o username do usuário desejado como parâmetro na URL.
 
 ```
-https://gg.gamerocorporation.com/api.php?username=exampleuser
+https://gg.gamerocorporation.com/api1.php?username=exampleuser
 ```
 
 Substitua `exampleuser` pelo username do usuário que deseja consultar.
@@ -60,7 +60,7 @@ Se o usuário consultado não for encontrado, a API responderá com uma mensagem
     <script>
         const username = 'exampleuser'; // Altere para o username que deseja consultar
 
-        fetch(`https://gg.gamerocorporation.com/api.php?username=${username}`)
+        fetch(`https://gg.gamerocorporation.com/api1.php?username=${username}`)
             .then(response => response.json())
             .then(data => {
                 const userDataDiv = document.getElementById('user-data');
