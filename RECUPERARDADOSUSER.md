@@ -13,18 +13,18 @@ A API Gamero Gaming fornece acesso aos dados dos usuários registrados em nossa 
 O endpoint principal da API é:
 
 ```
-https://gg.gamerocorporation.com/api1.php
+https://gg.gamerocorporation.com/api2.php
 ```
 
 ### Requisição
 
-Para recuperar os dados de um usuário específico, você precisa fazer uma solicitação GET para o endpoint da API, fornecendo o username do usuário desejado como parâmetro na URL.
+Para recuperar os dados de um usuário específico, você precisa fazer uma solicitação GET para o endpoint da API, fornecendo o `username` do usuário desejado e um `token` válido como parâmetros na URL.
 
 ```
-https://gg.gamerocorporation.com/api1.php?username=exampleuser
+https://gg.gamerocorporation.com/api2.php?username=exampleuser&token=yourtoken
 ```
 
-Substitua `exampleuser` pelo username do usuário que deseja consultar.
+Substitua `exampleuser` pelo username do usuário que deseja consultar e `yourtoken` pelo token de acesso.
 
 ### Resposta
 
@@ -59,8 +59,9 @@ Se o usuário consultado não for encontrado, a API responderá com uma mensagem
 
     <script>
         const username = 'exampleuser'; // Altere para o username que deseja consultar
+        const token = 'yourtoken'; // Altere para o token de acesso
 
-        fetch(`https://gg.gamerocorporation.com/api1.php?username=${username}`)
+        fetch(`https://gg.gamerocorporation.com/api2.php?username=${username}&token=${token}`)
             .then(response => response.json())
             .then(data => {
                 const userDataDiv = document.getElementById('user-data');
@@ -81,3 +82,14 @@ Se o usuário consultado não for encontrado, a API responderá com uma mensagem
 ```
 
 Este é um exemplo simples de como usar a API em uma página da web para exibir os dados do usuário.
+
+### Mensagens de Erro
+
+A API pode responder com várias mensagens de erro dependendo das condições. Aqui estão algumas mensagens de erro que podem ser retornadas:
+
+- `{"message": "Nenhum nome de usuário ou token fornecido"}`: Quando o parâmetro `username` ou `token` não é fornecido na solicitação.
+- `{"message": "Nome de usuário ou token inválido fornecido"}`: Quando o `username` ou `token` fornecido não é válido.
+- `{"message": "Usuário não encontrado"}`: Quando o `username` fornecido não corresponde a nenhum usuário registrado.
+- `{"error": "Token inválido, suspenso ou pendente"}`: Quando o `token` fornecido não é válido, está suspenso ou pendente.
+- `{"message": "Este perfil é privado"}`: Quando o perfil do usuário é privado e os dados não podem ser exibidos.
+- `{"error": "Falha na conexão com o banco de dados"}`: Quando há uma falha na conexão com o banco de dados.
