@@ -1,4 +1,6 @@
-## Visão Geral
+### Documentação para Dados do Usuário
+
+#### Visão Geral
 
 A API Gamero Gaming fornece acesso aos dados dos usuários registrados em nossa plataforma. Atualmente, a API oferece suporte para recuperar os seguintes dados de um usuário:
 
@@ -6,17 +8,17 @@ A API Gamero Gaming fornece acesso aos dados dos usuários registrados em nossa 
 - Steam
 - Epic Games
 
-## Uso da API
+#### Uso da API
 
-### Endpoint
+##### Endpoint
 
-O endpoint principal da API é:
+O endpoint principal da API para dados do usuário é:
 
 ```
 https://gg.gamerocorporation.com/api2.php
 ```
 
-### Requisição
+##### Requisição
 
 Para recuperar os dados de um usuário específico, você precisa fazer uma solicitação GET para o endpoint da API, fornecendo o `username` do usuário desejado e um `token` válido como parâmetros na URL.
 
@@ -26,7 +28,7 @@ https://gg.gamerocorporation.com/api2.php?username=exampleuser&token=yourtoken
 
 Substitua `exampleuser` pelo username do usuário que deseja consultar e `yourtoken` pelo token de acesso.
 
-### Resposta
+##### Resposta
 
 A API responderá com os dados do usuário em formato JSON. Aqui está um exemplo de resposta:
 
@@ -44,7 +46,7 @@ A API responderá com os dados do usuário em formato JSON. Aqui está um exempl
 
 Se o usuário consultado não for encontrado, a API responderá com uma mensagem de erro.
 
-### Exemplo de Uso (JavaScript)
+##### Exemplo de Uso (JavaScript)
 
 ```html
 <!DOCTYPE html>
@@ -81,9 +83,7 @@ Se o usuário consultado não for encontrado, a API responderá com uma mensagem
 </html>
 ```
 
-Este é um exemplo simples de como usar a API em uma página da web para exibir os dados do usuário.
-
-### Mensagens de Erro
+#### Mensagens de Erro
 
 A API pode responder com várias mensagens de erro dependendo das condições. Aqui estão algumas mensagens de erro que podem ser retornadas:
 
